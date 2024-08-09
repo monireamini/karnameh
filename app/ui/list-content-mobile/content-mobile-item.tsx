@@ -12,12 +12,15 @@ export const ContentMobileItem = ({
     key?: number
 }) => {
     const infoList = useMemo(
-        () => [
-            { title: 'Name', value: user.name },
-            { title: 'Username', value: user.username },
-            { title: 'Email', value: user.email },
-            { title: 'Phone number', value: user.phone },
-        ],
+        () =>
+            user
+                ? [
+                      { title: 'Name', value: user.name },
+                      { title: 'Username', value: user.username },
+                      { title: 'Email', value: user.email },
+                      { title: 'Phone number', value: user.phone },
+                  ]
+                : [],
         [user]
     )
 

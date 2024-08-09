@@ -17,21 +17,27 @@ export const UserInfo = ({ userId }: { userId: UserType['id'] }) => {
     const user = (users || [])?.find((user: UserType) => user.id === userId)
 
     const infoList = useMemo(
-        () => [
-            { title: 'Name', value: user.name },
-            { title: 'Username', value: user.username },
-            { title: 'Email', value: user.email },
-            {
-                title: 'Address',
-                value: `${user.address.suite}, ${user.address.street}, ${user.address.city}`,
-            },
-            { title: 'Zip code', value: user.address.zipcode },
-            { title: 'Phone number', value: user.phone },
-            { title: 'Website', value: user.website },
-            { title: 'Company', value: user.company.name },
-            { title: 'Company Catch Phrase', value: user.company.catchPhrase },
-            { title: 'Company Description', value: user.company.bs },
-        ],
+        () =>
+            user
+                ? [
+                      { title: 'Name', value: user.name },
+                      { title: 'Username', value: user.username },
+                      { title: 'Email', value: user.email },
+                      {
+                          title: 'Address',
+                          value: `${user.address.suite}, ${user.address.street}, ${user.address.city}`,
+                      },
+                      { title: 'Zip code', value: user.address.zipcode },
+                      { title: 'Phone number', value: user.phone },
+                      { title: 'Website', value: user.website },
+                      { title: 'Company', value: user.company.name },
+                      {
+                          title: 'Company Catch Phrase',
+                          value: user.company.catchPhrase,
+                      },
+                      { title: 'Company Description', value: user.company.bs },
+                  ]
+                : [],
         [user]
     )
 
