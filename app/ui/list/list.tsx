@@ -30,20 +30,34 @@ export default function UsersTable() {
 
     const [currentPage, setCurrentPage] = useState<number>(1)
 
+    const [searchTerm, setSearchTerm] = useState<string>('')
+
+    const filteredUsers = useMemo(() => {
+        return (users || []).filter(
+            (user) =>
+                user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                user.email.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+    }, [users, searchTerm])
+
     const currentPageUsers: UserType[] = useMemo(
         () =>
-            (users || []).slice(
+            filteredUsers.slice(
                 (currentPage - 1) * pageSize,
                 currentPage * pageSize
             ),
-        [users, currentPage]
+        [filteredUsers, currentPage]
     )
 
     return (
         <div className='w-full'>
             {/* list header */}
             <div className='flex flex-row justify-between'>
-                <Search placeholder='Search users...' />
+                <Search
+                    placeholder='Search users...'
+                    searchTerm={searchTerm}
+                    setSearchTerm={setSearchTerm}
+                />
             </div>
 
             {/* list content */}
@@ -64,7 +78,7 @@ export default function UsersTable() {
                                 </div>
 
                                 {/* desktop */}
-                                <div className='hidden md:flex'>
+                                <div className='hidden min-h-[440px] md:flex'>
                                     <TableContentDesktop
                                         users={currentPageUsers}
                                         setActiveUserId={setActiveUserId}

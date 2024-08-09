@@ -30,7 +30,7 @@ export const TableContentDesktop = ({
     const renderCell = React.useCallback(
         (user: UserType, columnKey: React.Key) => {
             return (
-                <p className='text-sm font-normal text-black'>
+                <p className='text-center text-sm font-normal text-black'>
                     {user[columnKey as keyof UserType]}
                 </p>
             )
@@ -45,11 +45,7 @@ export const TableContentDesktop = ({
                     <TableColumn
                         key={column.uid}
                         className='bg-transparent py-3'
-                        align={
-                            column.uid === 'actions' || column.uid === 'icon'
-                                ? 'center'
-                                : 'start'
-                        }
+                        align='center'
                     >
                         <p className='text-gray1 text-sm font-normal'>
                             {column.name}
