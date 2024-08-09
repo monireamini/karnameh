@@ -9,7 +9,7 @@ import { DetailModal } from '@/app/ui/detail-modal/detail-modal'
 import { useDisclosure } from '@nextui-org/modal'
 import { Pagination } from '@nextui-org/pagination'
 import { useQuery } from '@tanstack/react-query'
-import { getUsersEndpoint } from '@/app/lib/services/get-users.endpoint'
+import { getUsersEndpoint } from '@/app/lib/endpoints/get-users.endpoint'
 import { Spinner } from '@nextui-org/spinner'
 
 const pageSize = 5
@@ -29,6 +29,7 @@ export default function UsersList() {
     const [searchTerm, setSearchTerm] = useState<string>('')
 
     const filteredUsers = useMemo(() => {
+        setCurrentPage(1)
         return (users || []).filter(
             (user) =>
                 user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -94,7 +95,9 @@ export default function UsersList() {
                     <Pagination
                         loop
                         showControls
-                        total={Math.ceil((users?.length || 0) / pageSize)}
+                        total={Math.ceil(
+                            (filteredUsers?.length || 0) / pageSize
+                        )}
                         initialPage={1}
                         onChange={setCurrentPage}
                     />

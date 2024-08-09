@@ -1,7 +1,4 @@
 import React from 'react'
-import { UserType } from '@/app/lib/definitions'
-import { useQuery } from '@tanstack/react-query'
-import { getUsersEndpoint } from '@/app/lib/services/get-users.endpoint'
 
 export const UserInfoItem = ({
     title,

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { UserType } from '@/app/lib/definitions'
 import { useQuery } from '@tanstack/react-query'
-import { getUsersEndpoint } from '@/app/lib/services/get-users.endpoint'
+import { getUsersEndpoint } from '@/app/lib/endpoints/get-users.endpoint'
 import { UserInfoItem } from '@/app/ui/user-info-item/user-info-item'
 
 export const UserInfo = ({ userId }: { userId: UserType['id'] }) => {
