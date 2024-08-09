@@ -48,7 +48,7 @@ export default function UsersList() {
     return (
         <div className='w-full'>
             {/* list header */}
-            <div className='flex flex-row justify-between'>
+            <div className='mb-4 flex flex-row justify-between'>
                 <Search
                     placeholder='Search users...'
                     searchTerm={searchTerm}
@@ -60,29 +60,23 @@ export default function UsersList() {
             {isLoading ? (
                 <Spinner classNames={{ base: 'w-full mx-auto mt-16' }} />
             ) : (
-                <div className='mt-4 flow-root'>
-                    <div className='overflow-x-auto'>
-                        <div className='inline-block min-w-full align-middle'>
-                            <div className='overflow-hidden rounded-md bg-gray-50 md:pt-0'>
-                                {/* mobile */}
-                                <div className='md:hidden'>
-                                    <TableContentMobile
-                                        users={currentPageUsers}
-                                        setActiveUserId={setActiveUserId}
-                                        onOpen={onOpen}
-                                    />
-                                </div>
+                <div className='overflow-hidden md:pt-0'>
+                    {/* mobile */}
+                    <div className='md:hidden'>
+                        <TableContentMobile
+                            users={currentPageUsers}
+                            setActiveUserId={setActiveUserId}
+                            onOpen={onOpen}
+                        />
+                    </div>
 
-                                {/* desktop */}
-                                <div className='hidden min-h-[440px] md:flex'>
-                                    <TableContentDesktop
-                                        users={currentPageUsers}
-                                        setActiveUserId={setActiveUserId}
-                                        onOpen={onOpen}
-                                    />
-                                </div>
-                            </div>
-                        </div>
+                    {/* desktop */}
+                    <div className='hidden min-h-[440px] md:flex'>
+                        <TableContentDesktop
+                            users={currentPageUsers}
+                            setActiveUserId={setActiveUserId}
+                            onOpen={onOpen}
+                        />
                     </div>
                 </div>
             )}
