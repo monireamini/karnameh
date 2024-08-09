@@ -6,7 +6,6 @@ import { getUsersEndpoint } from '@/app/lib/services/get-users.endpoint'
 export const UserInfoItem = ({
     title,
     value,
-    key,
 }: {
     title: string
     value: string

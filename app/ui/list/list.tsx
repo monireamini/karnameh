@@ -14,12 +14,8 @@ import { Spinner } from '@nextui-org/spinner'
 
 const pageSize = 5
 
-export default function UsersTable() {
-    const {
-        data: users,
-        isLoading,
-        error,
-    } = useQuery({
+export default function UsersList() {
+    const { data: users, isLoading } = useQuery({
         queryKey: ['getUsersEndpoint'],
         queryFn: getUsersEndpoint,
     })

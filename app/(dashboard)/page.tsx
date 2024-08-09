@@ -1,4 +1,4 @@
-import UsersTable from '@/app/ui/list/list'
+import UsersList from '@/app/ui/list/list'
 
 export default function Home() {
     return (
@@ -9,7 +9,7 @@ export default function Home() {
                 </p>
             </div>
             <div className='mt-4 flex grow rounded-lg bg-gray-50 px-6 py-10'>
-                <UsersTable />
+                <UsersList />
             </div>
         </main>
     )
