@@ -31,7 +31,7 @@ export const TableContentDesktop = ({
         (user: UserType, columnKey: React.Key) => {
             return (
                 <p className='text-center text-sm font-normal text-black'>
-                    {user[columnKey]}
+                    {user[columnKey] as string}
                 </p>
             )
         },
