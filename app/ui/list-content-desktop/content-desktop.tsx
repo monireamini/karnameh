@@ -32,12 +32,12 @@ export const TableContentDesktop = ({
             const value = user[columnKey as keyof UserType]
 
             if (typeof value === 'string' || typeof value === 'number') {
+                return (
+                    <p className='text-center text-sm font-normal text-black'>
+                        {value}
+                    </p>
+                )
             }
-            return (
-                <p className='text-center text-sm font-normal text-black'>
-                    {value}
-                </p>
-            )
         },
         []
     )
