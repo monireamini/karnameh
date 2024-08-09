@@ -18,7 +18,7 @@ const config: Config = {
                 secondary: '#F2C94C',
                 error: '#E74C3C',
                 neutral: '#F7F7F7',
-                text: '#333333',
+                black: '#333333',
             },
         },
         keyframes: {
