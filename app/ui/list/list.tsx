@@ -61,7 +61,7 @@ export default function UsersList() {
             {isLoading ? (
                 <Spinner classNames={{ base: 'w-full mx-auto mt-16' }} />
             ) : (
-                <div className='overflow-hidden md:pt-0'>
+                <>
                     {/* mobile */}
                     <div className='md:hidden'>
                         <TableContentMobile
@@ -79,7 +79,7 @@ export default function UsersList() {
                             onOpen={onOpen}
                         />
                     </div>
-                </div>
+                </>
             )}
 
             {/* cancel modal*/}
@@ -93,13 +93,13 @@ export default function UsersList() {
             {(users?.length || 0) > 0 && (
                 <div className='mt-4'>
                     <Pagination
-                        loop
-                        showControls
+                        initialPage={1}
+                        onChange={setCurrentPage}
                         total={Math.ceil(
                             (filteredUsers?.length || 0) / pageSize
                         )}
-                        initialPage={1}
-                        onChange={setCurrentPage}
+                        showControls
+                        loop
                     />
                 </div>
             )}
