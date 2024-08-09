@@ -7,6 +7,10 @@ const config: Config = {
         './components/**/*.{js,ts,jsx,tsx,mdx}',
         './app/**/*.{js,ts,jsx,tsx,mdx}',
         './node_modules/@nextui-org/theme/dist/components/spacer.js',
+        './node_modules/@nextui-org/theme/dist/components/modal.js',
+        './node_modules/@nextui-org/theme/dist/components/list.js',
+        './node_modules/@nextui-org/theme/dist/components/pagination.js',
+        './node_modules/@nextui-org/theme/dist/components/spinner.js',
     ],
     theme: {
         extend: {
@@ -19,13 +23,7 @@ const config: Config = {
                 error: '#E74C3C',
                 neutral: '#F7F7F7',
                 black: '#333333',
-            },
-        },
-        keyframes: {
-            shimmer: {
-                '100%': {
-                    transform: 'translateX(100%)',
-                },
+                grey3: '#EFEFEF',
             },
         },
     },

@@ -1,8 +1,8 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import { NextUIProvider } from '@nextui-org/system'
 import { dmsans } from '@/app/ui/fonts'
 import '../globals.css'
+import { Providers } from '@/app/providers'
 
 export const metadata: Metadata = {
     title: 'Karnameh Interview',
@@ -11,13 +11,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
     children,
-}: Readonly<{
-    children: React.ReactNode
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang='en'>
             <body className={`${dmsans.className} antialiased`}>
-                <NextUIProvider>{children}</NextUIProvider>
+                <Providers>{children}</Providers>
             </body>
         </html>
     )
