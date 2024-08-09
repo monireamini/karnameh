@@ -1,6 +1,8 @@
+import React from 'react'
 import type { Metadata } from 'next'
-import './globals.css'
+import { NextUIProvider } from '@nextui-org/system'
 import { dmsans } from '@/app/ui/fonts'
+import '../globals.css'
 
 export const metadata: Metadata = {
     title: 'Karnameh Interview',
@@ -15,7 +17,7 @@ export default function RootLayout({
     return (
         <html lang='en'>
             <body className={`${dmsans.className} antialiased`}>
-                {children}
+                <NextUIProvider>{children}</NextUIProvider>
             </body>
         </html>
     )
