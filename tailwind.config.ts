@@ -25,7 +25,7 @@ const config: Config = {
                 errorLight: '#FFE3E3',
                 neutral: '#F7F7F7',
                 black: '#333333',
-                grey3: '#EFEFEF',
+                gray3: '#EFEFEF',
             },
         },
     },

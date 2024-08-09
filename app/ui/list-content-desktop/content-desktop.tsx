@@ -68,7 +68,7 @@ export const TableContentDesktop = ({
                     return (
                         <TableRow
                             key={item.id}
-                            className='border-t-1 border-gray3 data-[selected=true]:bg-gray3 h-[72px]'
+                            className='border-t-1 border-gray3 data-[selected=true]:bg-gray3 hover:bg-gray3 h-[72px]'
                             onClick={handleClick}
                         >
                             {(columnKey) => (
