@@ -1,3 +1,3 @@
-import { DM_Sans } from 'next/font/google';
+import { DM_Sans } from 'next/font/google'
 
-export const dmsans = DM_Sans({ subsets: ['latin'] });
+export const dmsans = DM_Sans({ subsets: ['latin'] })
