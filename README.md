@@ -50,3 +50,6 @@ yarn dev
 ```
 
 5. Open your browser and visit `http://localhost:3000` to see the dashboard in action.
+
+
+6. To see the web application in action, visit the live demo at this link: https://karnameh-int.vercel.app.
