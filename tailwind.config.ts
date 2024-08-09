@@ -19,8 +19,10 @@ const config: Config = {
             },
             colors: {
                 primary: '#519872',
+                primaryLight: '#DAFBE5',
                 secondary: '#F2C94C',
                 error: '#E74C3C',
+                errorLight: '#FFE3E3',
                 neutral: '#F7F7F7',
                 black: '#333333',
                 grey3: '#EFEFEF',
