@@ -29,11 +29,14 @@ export const TableContentDesktop = ({
 }) => {
     const renderCell = React.useCallback(
         (user: UserType, columnKey: React.Key) => {
-            return (
-                <p className='text-center text-sm font-normal text-black'>
-                    {user[columnKey] as string}
-                </p>
-            )
+            const value = user[columnKey as keyof UserType]
+
+            if (typeof value === 'string')
+                return (
+                    <p className='text-center text-sm font-normal text-black'>
+                        {value}
+                    </p>
+                )
         },
         []
     )

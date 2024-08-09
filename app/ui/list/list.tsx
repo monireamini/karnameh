@@ -99,12 +99,12 @@ export default function UsersTable() {
             />
 
             {/* pagination */}
-            {users?.length > 0 && (
+            {(users?.length || 0) > 0 && (
                 <div className='mt-4'>
                     <Pagination
                         loop
                         showControls
-                        total={Math.ceil(users?.length / pageSize)}
+                        total={Math.ceil((users?.length || 0) / pageSize)}
                         initialPage={1}
                         onChange={setCurrentPage}
                     />
