@@ -8,8 +8,12 @@ export const getUsersEndpoint = async (): Promise<UserType[]> => {
             'https://jsonplaceholder.typicode.com/users'
         )
         return response.data
-    } catch (error) {
-        showCustomToast(error?.message || 'Something went wrong!', 'error')
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            showCustomToast(error.message || 'Something went wrong!', 'error')
+        } else {
+            showCustomToast('Something went wrong!', 'error')
+        }
         throw error
     }
 }
